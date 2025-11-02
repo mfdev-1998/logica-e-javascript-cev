@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+    <style>
+        /* Opcional: Adicionei um pouco de estilo para deixar a saída mais visível */
+        div#res {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sistema de Identificação de Origem</h1>
+    <p>
+        País: <input type="text" name="txtPais" id="txtPais">
+        <input type="button" value="Verificar" onclick="verificarNacionalidade()">
+    </p>
+    <div id="res">
+        </div>
+
+    <script>
+        /**
+         * @function verificarNacionalidade
+         * @description Esta função obtém o país digitado pelo usuário, verifica se é 'Brasil'
+         * e exibe a nacionalidade correspondente na tela.
+         */
+        function verificarNacionalidade() {
+            // 1. Obter o elemento input do HTML pelo ID
+            //    document.getElementById('txtPais') retorna a referência ao elemento input.
+            let inputPais = document.getElementById('txtPais');
+
+            // 2. Obter o valor (texto) digitado no input
+            //    .value pega o conteúdo do campo de texto.
+            //    .trim() remove espaços em branco extras no início e no fim.
+            //    .toLowerCase() converte o texto para minúsculas para facilitar a comparação
+            //    (ex: "Brasil", "brasil", "BRASIL" serão tratados da mesma forma).
+            let paisDigitado = inputPais.value.trim().toLowerCase();
+
+            // 3. Obter o elemento div onde o resultado será exibido
+            let resultadoDiv = document.getElementById('res');
+
+            // 4. Lógica para verificar a nacionalidade
+            let mensagem = ''; // Variável para armazenar a mensagem a ser exibida
+
+            if (paisDigitado === 'brasil') { // Compara com 'brasil' em minúsculas
+                mensagem = 'Você é Brasileiro!';
+            } else if (paisDigitado === '') { // Verifica se o campo está vazio
+                mensagem = 'Por favor, digite um país para verificar.';
+            }
+            else {
+                mensagem = 'Você é Estrangeiro!';
+            }
+
+            // 5. Exibir a mensagem na div de resultado
+            //    .innerHTML insere o conteúdo HTML (neste caso, o texto da mensagem) dentro da div.
+            resultadoDiv.innerHTML = `<p>${mensagem}</p>`;
+
+            // Opcional: Limpar o campo de texto após a verificação
+            inputPais.value = '';
+            inputPais.focus(); // Coloca o foco de volta no campo para nova digitação
+        }
+    </script>
+</body>
+</html>

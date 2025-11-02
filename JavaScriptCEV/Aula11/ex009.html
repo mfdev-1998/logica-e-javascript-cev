@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+    <style>
+        div#res {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sistema de Identificação de Origem</h1>
+    <p>
+    País: <input type="text" name="txtPais" id="txtPais">
+    <input type="button" value="Verificar" onclick="VerificarNacionalidade()">
+    </p>
+
+    <div id="res"></div>
+
+    <script>
+        function VerificarNacionalidade () {
+            let inputPais = document.getElementById('txtPais');
+            let paisDigitado = inputPais.value.trim().toLowerCase();
+            let resultadoDiv = document.getElementById('res');
+            let mensagem = '';
+            if (paisDigitado ==='brasil') {
+                mensagem = 'Você é Brasileiro!';
+            } else if (paisDigitado === '') {
+                mensagem = 'Por favor, digite um país para verificar.';
+            } else {
+                mensagem = 'Você é Estrangeiro!';
+            }
+            resultadoDiv.innerHTML = `<p>${mensagem}</p>`;
+            inputPais.value = '';
+            inputPais.focus();
+        }
+    </script>
+     
+</body>
+</html>
+
+
+
+
+ 
+

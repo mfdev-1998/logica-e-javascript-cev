@@ -1,0 +1,20 @@
+<meta charset="UTF-8">
+<script>
+
+function pulaLinha() {
+    document.write("<br>");
+    document.write("<br>"); 
+}
+
+function mostra(frase) {
+    document.write(frase);
+    pulaLinha();
+}
+
+
+var pesoMoises = 72;
+var alturaMoises = 1.70;
+
+var imcMoises = pesoMoises / (alturaMoises * alturaMoises);
+
+mostra("O imc do Moisés é " + imcMoises);
