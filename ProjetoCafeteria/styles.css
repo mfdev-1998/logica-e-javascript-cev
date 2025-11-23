@@ -33,6 +33,42 @@ header {
     margin: 0 auto;
 }
 
+.carrinho-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    cursor: pointer;
+
+}
+
+.carrinho-icon {
+    font-size: 1.8rem;
+    color: #fff;
+}
+
+.contador-carrinho {
+    position: absolute;
+    top: 5px;
+    left: 20px;
+    background-color: burlywood;
+    color: #2c1810;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border-radius: 50%;
+    padding: 2px 6px;
+    min-width: 20px;
+    text-align: center;
+    line-height: 1;
+    transform: translate(0, -50%);
+}
+
+@media (max-widht: 768px) {
+    .carrinho-container {
+        order: 2;
+    }
+}
+
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
@@ -144,6 +180,30 @@ header {
     text-align: center;
     transition: 0.5s;
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.btn-adicionar {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: rgb(129, 96, 54);
+    color: #fff;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-top: 10px;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+.btn-adicionar:hover {
+    background-color: rgb(254, 207, 145);
+    color: #2c1810;
 }
 
 .produto-card:hover {
@@ -190,3 +250,87 @@ header {
     display: block;
 }
 
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    height: 4px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+.nav-links.active {
+    display: flex;
+}
+
+.hero {
+    margin-top: 64px;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1rem;
+    }
+}
+
+.menu-toggle {
+    display: flex;
+}
+
+.nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    background-color: #2c1810;
+    padding: 1rem 0;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+}
+
+.nav-links li {
+    margin: 10px 0;
+}
+
+.notificacao-carrinho {
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    background-color: #2c1810;
+    color: #fff;
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+    max-width: 250px;
+    font-size: 0.9rem;
+}
+
+.notificacao-carrinho.mostrar {
+    opacity: 1;
+    visibility: visible;
+}
+
+#nome-produto-notificacao {
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+#total-carrinho-notificacao {
+    font-size: 1.1rem;
+    color: burlywood;
+}
