@@ -61,7 +61,7 @@ Para ver o código ou rodar qualquer projeto localmente:
 Ficarei feliz em conectar!
 
 * **GitHub:** [mfdev-1998](https://github.com/mfdev-1998)
-* **LinkedIn:** [Moisés Firmino](https://www.linkedin.com/in/mois%C3%A9s-firmino-06b111189/)
+* **LinkedIn:** [Moisés Firmino](https://www.linkedin.com/in/mois%C3%A9sfirmino1998/)
 * **Email:** mf19980520@gmail.com
 
 <p align="center">Feito com ☕ e muito código por Moisés Firmino.</p>
